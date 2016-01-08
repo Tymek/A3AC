@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="armaApp">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Arma 3 Artillery Calculator</title>
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="icon" href="favicon.ico">
+	<link rel="stylesheet" href="foundation.css">
+	<link rel="stylesheet" href="font/stylesheet.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<form ng-controller="armaCalcController as aCtrl">
+		<header class="row">
+			<h1 class="small-12 columns">Arma 3 Artillery Calculator</h1>
+		</header>
+		<div class="row">
+			<fieldset class="small-12 columns">
+				<legend>Input <span class="gray">(8 digit grid / meters)</span></legend>
+				<div class="row type">
+					<div class="small-12 columns">
+						<select ng-model="aCtrl.type" ng-options="t.id as t.name for t in aCtrl.types" ng-change="aCtrl.calc()">
+							<option value="" disabled selected style="display:none">Select battery type</option>
+							<!--							<option ng-repeat="(type, name) in " value="{{type}}">{{name}}</option>-->
+						</select>
+					</div>
+				</div>
+				<div class="row coord">
+					<div class="small-12 columns">
+						<table style="width: 100%;" cellpadding="0" border="0" cellspacing="0" >
+							<thead>
+								<tr>
+									<th>
+										<div class="switch">
+											<input id="insight" type="checkbox" ng-model="aCtrl.insight" ng-change="aCtrl.calc()">
+											<label for="insight"></label>
+										</div>
+									</th>
+									<th ng-hide="aCtrl.insight" class="tdb">X</th>
+									<th ng-hide="aCtrl.insight" class="tdb">Y</th>
+									<th ng-show="aCtrl.insight" class="tdb" colspan="2">X <span class="gray">&thinsp;(range)</span></th>
+									<th class="tdb">Z <span class="gray">&thinsp;(altitude)</span></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-hide="aCtrl.insight">
+									<th>
+										<label for="bx" class="inline">Battery</label>
+									</th>
+									<td>
+										<input type="number" name="bx" id="bx" ng-model="aCtrl.bx" ng-change="aCtrl.calc()">
+									</td>
+									<td>
+										<input type="number" name="by" id="by" ng-model="aCtrl.by" ng-change="aCtrl.calc()">
+									</td>
+									<td>
+										<input type="number" name="bz" id="bz" ng-model="aCtrl.bz" ng-change="aCtrl.calc()">
+									</td>
+								</tr>
+								<tr ng-hide="aCtrl.insight">
+									<th>
+										<label for="tx" class="inline">Target</label>
+									</th>
+									<td>
+										<input type="number" name="tx" id="tx" ng-model="aCtrl.tx" ng-change="aCtrl.calc()">
+									</td>
+									<td>
+										<input type="number" name="ty" id="ty" ng-model="aCtrl.ty" ng-change="aCtrl.calc()">
+									</td>
+									<td>
+										<input type="number" name="ty" id="ty" ng-model="aCtrl.tz" ng-change="aCtrl.calc()">
+									</td>
+								</tr>
+								<tr>
+									<th>
+										<label class="inline">Range</label>
+									</th>
+									<td colspan="2">
+										<input type="number" name="d" id="d" required ng-disabled="!aCtrl.insight" ng-model="aCtrl.d" ng-change="aCtrl.calc()">
+									</td>
+									<td>
+										<input type="number" name="a" id="a" required ng-disabled="!aCtrl.insight" ng-model="aCtrl.a" ng-change="aCtrl.calc()">
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</fieldset>
+			<fieldset class="small-12 columns output">
+				<legend>Output</legend>
+				<div class="row fi">
+					<div class="columns small-4 medium-4 large-3 disabled range">
+						<label>
+							<h5>Mode</h5></label>
+						<div class="range-slider disabled vertical-range" data-slider data-options="vertical: true; start: 1; end: 5; step: 1; initial: 1">
+							<span class="range-slider-handle" role="slider" tabindex="0"></span>
+							<span class="range-slider-active-segment"></span>
+							<input type="hidden">
+						</div>
+						<ul>
+							<li ng-click="aCtrl.calc(4)" ng-class="{active: aCtrl.modes.indexOf('4') != -1}"><span ng-show="aCtrl.type == 'howitzer'">Extreme</span></li>
+							<li ng-click="aCtrl.calc(3)" ng-class="{active: aCtrl.modes.indexOf('3') != -1}"><span ng-show="aCtrl.type == 'mlrs'">Full</span><span ng-show="aCtrl.type == 'howitzer'">Further</span></li>
+							<li ng-click="aCtrl.calc(2)" ng-class="{active: aCtrl.modes.indexOf('2') != -1}"><span>Far</span></li>
+							<li ng-click="aCtrl.calc(1)" ng-class="{active: aCtrl.modes.indexOf('1') != -1}"><span>Medium</span></li>
+							<li ng-click="aCtrl.calc(0)" ng-class="{active: aCtrl.modes.indexOf('0') != -1}"><span>Short</span></li>
+						</ul>
+					</div>
+					<div class="small-4 large-5 columns">
+						<label for="b">
+							<h5>ELV</h5>
+							<input type="number" ng-model="elvh" id="elvh" name="elvh" disabled>
+							<input type="number" ng-model="elvl" id="elvl" name="elvl" disabled>
+						</label>
+					</div>
+					<div class="small-4 large-4 columns">
+						<label for="b">
+							<h5>TRV <span class="gray">&thinsp;(ETA)</span></h5>
+							<input type="number" ng-model="etah" id="etah" name="etah" disabled>
+							<input type="number" ng-model="etal" id="etal" name="etal" disabled>
+						</label>
+					</div>
+				</div>
+				<div class="row bearing" ng-hide="aCtrl.insight">
+					<div class="small-12 columns">
+						<label for="b">
+							<h5>DIR</h5></label>
+						<div class="row">
+							<div class="small-4 medium-3 large-2 columns">
+								<input type="text" name="b" id="b" disabled ng-model="aCtrl.b">
+							</div>
+							<div class="small-8 medium-9 large-10 columns">
+								<div class="range-slider" data-slider disabled data-options="start: 0; end: 360; step: 0,01; initial: 90;">
+									<span class="range-slider-handle" role="slider" tabindex="0"></span>
+									<span class="range-slider-active-segment"></span>
+									<input type="hidden" id="bearing" name="bearing">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+	</form>
+	<script src="jquery.js"></script>
+	<script src="modernizr.js"></script>
+	<script src="foundation.min.js"></script>
+	<script src="angular.min.js"></script>
+	<script src="functions.js"></script>
+</body>
+
+</html>

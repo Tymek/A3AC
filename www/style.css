@@ -1,0 +1,236 @@
+body {
+	font-size: 20px;
+	background-color: #292929;
+	background-image: url(bg.jpg);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+* {
+	font-weight: normal !important;
+}
+
+label, th, td, tr, span, li {
+	font-size: 16px;
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: 'dezen_pro_regular', Roboto, Helvetica, Arial, sans-serif;
+	color: #ffffff;
+}
+
+h1 {
+	color: #eeeeee;
+}
+
+form {
+	padding: 30px 0;
+}
+
+table label,
+table input,
+table .switch {
+	margin-bottom: 0 !important;
+}
+
+th label {
+	font-weight: bold;
+}
+
+::-webkit-input-placeholder {
+	color: #ccc;
+}
+
+:-moz-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: #ccc;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: #ccc;
+}
+
+.gray {
+	color: #aaa;
+}
+
+.range-slider.vertical-range {
+	height: 7.6rem;
+	margin-top: 0.25rem;
+	float: left;
+	margin-left: 0.5rem;
+	margin-right: 16px;
+}
+
+.range ul {
+	list-style-type: square;
+	color: #555555;
+}
+
+.range ul li {
+	cursor: pointer;
+}
+
+.disabled.range ul li {
+	cursor: default;
+}
+
+.range ul li.active span {
+	color: #c48214;
+	cursor: pointer;
+}
+
+.range-slider.disabled,
+.range-slider[disabled] {
+	opacity: 1 !important;
+}
+
+.range-slider.disabled .range-slider-handle,
+.range-slider[disabled] .range-slider-handle {
+	opacity: 1 !important;
+	background: #c48214 !important;
+	cursor: not-allowed;
+}
+
+.bearing .range-slider {
+	cursor: default !important !important;
+}
+
+.bearing .range-slider-active-segment {
+	background: none !important;
+}
+.range-slider, .range-slider {
+	background: #888 !important;
+	border: 1px solid #555 !important;
+}
+
+.range-slider-active-segment {
+	background: #555;
+}
+
+.bearing .range-slider-active-segment .range-slider-handle {
+	cursor: default !important !important;
+}
+
+.output label {
+	cursor: default !important;
+}
+
+.bearing .range-slider {
+	margin-top: 0.6em;
+}
+
+input:not([type])[disabled],
+input:not([type])[readonly],
+fieldset[disabled] input:not([type]),
+input[type="text"][disabled],
+input[type="text"][readonly],
+fieldset[disabled] input[type="text"],
+input[type="password"][disabled],
+input[type="password"][readonly],
+fieldset[disabled] input[type="password"],
+input[type="date"][disabled],
+input[type="date"][readonly],
+fieldset[disabled] input[type="date"],
+input[type="datetime"][disabled],
+input[type="datetime"][readonly],
+fieldset[disabled] input[type="datetime"],
+input[type="datetime-local"][disabled],
+input[type="datetime-local"][readonly],
+fieldset[disabled] input[type="datetime-local"],
+input[type="month"][disabled],
+input[type="month"][readonly],
+fieldset[disabled] input[type="month"],
+input[type="week"][disabled],
+input[type="week"][readonly],
+fieldset[disabled] input[type="week"],
+input[type="email"][disabled],
+input[type="email"][readonly],
+fieldset[disabled] input[type="email"],
+input[type="number"][disabled],
+input[type="number"][readonly],
+fieldset[disabled] input[type="number"],
+input[type="search"][disabled],
+input[type="search"][readonly],
+fieldset[disabled] input[type="search"],
+input[type="tel"][disabled],
+input[type="tel"][readonly],
+fieldset[disabled] input[type="tel"],
+input[type="time"][disabled],
+input[type="time"][readonly],
+fieldset[disabled] input[type="time"],
+input[type="url"][disabled],
+input[type="url"][readonly],
+fieldset[disabled] input[type="url"],
+input[type="color"][disabled],
+input[type="color"][readonly],
+fieldset[disabled] input[type="color"],
+textarea[disabled],
+textarea[readonly],
+fieldset[disabled] textarea {
+	background-color: #888 !important;
+	text-align: center;
+	border-color: #555555;
+}
+
+.output h5 {
+	text-transform: uppercase;
+}
+
+fieldset {
+/*	border-color: #000000;*/
+	border: none;
+	box-shadow: 0 0 10px #000;
+	background: rgba(0,0,0,.4);
+}
+table {
+	background: #272727;
+	color: #fff;
+/*	border-bottom: none;*/
+/*	border-bottom-width: 0;*/
+}
+table tr.even, table tr.alt, table tr:nth-of-type(even) {
+	background: #202020;
+}
+table thead {
+	background: rgba(0,0,0,.5) !important;
+}
+
+/*
+table thead tr th, table thead tr td {
+	background: rgba(0,0,0,.5) !important;
+	background: #000 !important;
+}*/
+
+table, tr, th, td {
+	border-color: #555;
+}
+
+.switch label:after {
+/*	background: #000;*/
+}
+
+.switch input:checked + label {
+	background: #c48214;
+}
+
+label, table thead tr th, table thead tr td {
+	color: #fff;
+}
+/*
+td, .tdb {
+	border-left-width: 1px;
+	border-left-style: solid;
+}
+
+th, td {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}*/

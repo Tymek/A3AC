@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="cz.tymek.app.a3ac" version="0.2.03" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+	<name>A3AC</name>
+	<description>
+		Arma 3 Artillery Calculator for manual fire without in-game Artillery Computer.
+	</description>
+	<author email="czech@t.pl" href="http://www.tymek.cz">
+		Tymoteusz Czech
+	</author>
+	<content src="index.html" />
+	<plugin name="cordova-plugin-whitelist" spec="1" />
+	<access origin="*" />
+	<preference name="permissions" value="none" />
+    <engine name="android" spec="~4.1.1" />
+    <engine name="browser" spec="~4.0.0" />
+	<platform name="android">
+		<icon src="res/android/mipmap-mdpi/ic_launcher.png" density="mdpi" />
+		<icon src="res/android/mipmap-hdpi/ic_launcher.png" density="hdpi" />
+		<icon src="res/android/mipmap-xhdpi/ic_launcher.png" density="xhdpi" />
+		<icon src="res/android/mipmap-xxhdpi/ic_launcher.png" density="xhdpi" />
+		<icon src="res/android/mipmap-xxxhdpi/ic_launcher.png" density="xhdpi" />
+	</platform>
+</widget>
