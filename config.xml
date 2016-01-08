@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="cz.tymek.app.a3ac" version="0.2.03" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="cz.tymek.app.a3ac" version="0.2.04" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
 	<name>A3AC</name>
 	<description>
 		Arma 3 Artillery Calculator for manual fire without in-game Artillery Computer.

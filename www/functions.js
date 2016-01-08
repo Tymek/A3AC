@@ -148,9 +148,37 @@ angular.module('armaApp', []).controller('armaCalcController', ['$scope', '$loca
 	$scope.fixed = Number.toFixed;
 }]);
 
+
 $(window).load(function () {
 	'use strict';
+	var $type = $(".type select"),
+		$mode = $("#insight");
+	
 	$(document).foundation();
+
+	if (localStorage.type !== null) {
+		$type.val(localStorage.type);
+	}
+
+	if (localStorage.mode !== null && localStorage.mode !== undefined) {
+		if (localStorage.mode === "direct") {
+			$mode.trigger("click");
+		}
+	} else {
+		localStorage.mode = "indirect";
+	}
+
+	$type.on("change", function () {
+		localStorage.type = $type.val();
+	});
+	$mode.on("click", function () {
+		if (localStorage.mode === "indirect") {
+			localStorage.mode = "direct";
+		} else {
+			localStorage.mode = "indirect";
+		}
+	});
+
 	/*$('.range .range-slider').on('change.fndtn.slider', function () {
 		
 	});*/

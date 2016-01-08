@@ -41,18 +41,21 @@ __No "submit/calculate" button__ &ndash; live output triggered by every input ch
 ---
 
 ### Build
-__You need to meet all standard requirements for Cordova__, or send files to build server.
+__You need to meet all standard requirements for android compilation with Cordova__, or send files to build server.
 
 ```
 cordova prepare
-cordova build
+cordova build android
 ```
 
 ### Contribution
-Made on Foundation framework with AngularJS and some jQuery. Sorry for poorly structured and undocumented (except some comments in Polish) code. App was not made to be public at first. On the plus side, code is very short, with main js file ~150 lines.
+Made on Foundation framework with AngularJS and some jQuery. Sorry for poorly structured and undocumented (except some comments in Polish) code. Some logic in HTML file. App was not made to be public at first. On the plus side, code is very short, with main js file ~150 lines.
 
 ## Changelog
 Changes tracked from first public version (v2). Repository initialized on v2.03
+
+#### 2.04
+- save last settings (battery type and calculation mode)
 
 #### 2.03
 - viewpoint and zoom fix for mobile devices
@@ -69,13 +72,8 @@ Changes tracked from first public version (v2). Repository initialized on v2.03
 - web favicon
 
 ### Scheduled changes
-
-#### 2.04
-- store last settings (battery type and calculation mode)
-- background align fix when showing keyboard
-
-#### 2.05
 - ETA in minutes and seconds
+- background align fix when showing keyboard
 - calculation near range boundry with ground elevation difference (NaN error)
 
 ### Planned features
