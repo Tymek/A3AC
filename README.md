@@ -3,7 +3,7 @@ _for manual fire without in-game Artillery Computer._
 
 Last builds:
 - web online: [a3ac.app.tymek.cz](http://a3ac.app.tymek.cz/)
-- android native: [apk download](http://a3ac.app.tymek.cz/apk/)
+- android native: [apk download](http://app.tymek.cz/a3ac/apk/)
 
 ## Instructions
 
