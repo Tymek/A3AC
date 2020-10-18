@@ -1,9 +1,9 @@
 # Arma 3 Artillery Calculator
 _for manual fire without in-game Artillery Computer._
 
-Last builds:
-- web online: [a3ac.app.tymek.cz](http://a3ac.app.tymek.cz/)
-- android native: [apk download](http://app.tymek.cz/a3ac/apk/)
+### <strong align="center">**Last build: [a3ac.vercel.app](https://a3ac.vercel.app/)**</strong>
+
+---
 
 ## Instructions
 
@@ -11,7 +11,7 @@ Last builds:
 ### Usage
 If you don't know how to manual fire, watch [this video tutorial](https://www.youtube.com/watch?v=v6m232CL1Aw).
 
-![screenshot](http://app.tymek.cz/a3ac/screenshot.png)
+![screenshot](https://a3ac.vercel.app/screenshot.png)
 
 1. Artillery type
 	- mortar (MK6 Mortar / Mobile Mortar Truck)
@@ -39,20 +39,27 @@ __No "submit/calculate" button__ &ndash; live output triggered by every input ch
 
 
 ---
+### How to run
+Just download this and open `www/index.html`
 
-### Build
-__You need to meet all standard requirements for android compilation with Cordova__, or send files to build server.
+### ~~Build~~
+~~__You need to meet all standard requirements for android compilation with Cordova__, or send files to build server.~~
 
-```
-cordova prepare
-cordova build android
-```
+~~cordova prepare~~
 
-### Contribution
+~~cordova build android~~
+
+
+### This is a legacy hobby project
 Made on Foundation framework with AngularJS and some jQuery. Sorry for poorly structured and undocumented (except some comments in Polish) code. Some logic in HTML file. App was not made to be public at first. On the plus side, code is very short, with main js file ~150 lines.
 
 ## Changelog
 Changes tracked from first public version (v2). Repository initialized on v2.03
+
+#### 2.5
+- redeploy with Vercel
+- depriciate Android "native" version
+- update readme
 
 #### 2.04
 - save last settings (battery type and calculation mode)
@@ -77,6 +84,7 @@ Changes tracked from first public version (v2). Repository initialized on v2.03
 - calculation near range boundry with ground elevation difference (NaN error)
 
 ### Planned features
+- **REWRITE** - maybe, someday, no promises
 - shell spread (at least approximate value)
 - indication if low angle fire is unavailable
 - modded artillery (if existst and requested)
